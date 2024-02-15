@@ -53,9 +53,9 @@ gantt
     title Battle Bots
     dateFormat  YYYY-MM-DD
 
-    Chassis Design: 2024-02-10, 18d
-    Control Design: 2024-02-10, 18d
-    Drive Train Design: 2024-02-10, 18d
+    Chassis Design: active, 2024-02-10, 18d
+    Control Design: active, 2024-02-10, 18d
+    Drive Train Design: active, 2024-02-10, 18d
     Weapon Design: 2024-02-25, 17d
     Armor Design: 2024-02-25, 17d
     Chassis Manufacturing: 2024-02-25, 14d
