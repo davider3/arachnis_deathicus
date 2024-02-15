@@ -9,6 +9,8 @@ Team Members: David Reinhardt, Mason Harris, Josh Hoffman, Caleb Price
 
 ## The Robot
 
+A rough sketch is included [here.](images/meeting_notes/feb15.jpg)
+
 ### Weapons
 
 * Combine
