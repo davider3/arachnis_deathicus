@@ -5,19 +5,19 @@ Team Members: David Reinhardt, Mason Harris, Josh Hoffman, Caleb Price
 
 ## Table of Contents
 
-* [hardware](hardware)
+* [hardware](hardware) - All solidworks files and other hardware documentation is stored here
 
 ## The Robot
 
 ### Weapons
 
 * Combine
-  * [ ] Select Motor
-  * [ ] Design
+  * [ ] Select Motor @ <span style="color:red">Josh</span>
+  * [ ] Design @ <span style="color:red">Josh</span>
   * [ ] Prototype
   * [ ] Manufacture
 * Ramp
-  * [ ] Design
+  * [ ] Design @ <span style="color:red">Mason</span>
   * [ ] Prototype
   * [ ] Manufacture
 * Fist of Death
@@ -29,11 +29,15 @@ Team Members: David Reinhardt, Mason Harris, Josh Hoffman, Caleb Price
 ### Electrical
 
 * Battery
-  * [ ] Select
+  * [ ] Select @ <span style="color:red">David</span>
+  * [ ] Buy
+  * [ ] Test
+* Drive Train Motors
+  * [ ] Select @ <span style="color:red">David</span>
   * [ ] Buy
   * [ ] Test
 * Controller
-  * [ ] Select
+  * [ ] Select @ <span style="color:red">Caleb</span>
   * [ ] Buy
   * [ ] Define Logic
   * [ ] Test
