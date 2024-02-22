@@ -23,7 +23,7 @@ A rough sketch is included [here.](images/meeting_notes/feb15.jpg)
   * [ ] Prototype
   * [ ] Manufacture
 * Fist of Death
-  * [ ] Select Solenoid
+  * [ ] Select Solenoid @ <span style="color:red">David</span>
   * [ ] Design
   * [ ] Prototype
   * [ ] Manufacture
@@ -39,8 +39,8 @@ A rough sketch is included [here.](images/meeting_notes/feb15.jpg)
   * [ ] Buy
   * [ ] Test
 * Controller
-  * [ ] Select @ <span style="color:red">Caleb</span>
-  * [ ] Buy
+  * [x] Select @ <span style="color:red">Caleb</span>
+  * [ ] Buy @ <span style="color:red">Caleb</span>
   * [ ] Define Logic
   * [ ] Test
 
