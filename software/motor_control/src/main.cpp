@@ -2,10 +2,10 @@
 // throttle channel 3 on pin 10 
 const int fwd_rev_pwm_in = 9;  // Input pin for PWM signal from RC receiver
 const int lft_rgt_pwm_in = 6;  // Input pin for PWM signal from RC receiver
-const int left_wheel_fwd_pin = 4;     // Output pin for DC motor
-const int left_wheel_rev_pin = 2;     // Output pin for DC motor
-const int right_wheel_fwd_pin = 7;     // Output pin for DC motor
-const int right_wheel_rev_pin = 8;     // Output pin for DC motor
+const int left_wheel_fwd_pin = 7;     // Output pin for DC motor
+const int left_wheel_rev_pin = 8;     // Output pin for DC motor
+const int right_wheel_fwd_pin = 4;     // Output pin for DC motor
+const int right_wheel_rev_pin = 2;     // Output pin for DC motor
 const int right_wheel_pwm_out = 3;     // Output pin for DC motor
 const int left_wheel_pwm_out = 5;     // Output pin for DC motor
 
@@ -55,8 +55,7 @@ void loop() {
     digitalWrite(left_wheel_fwd_pin, HIGH); // Set the motor direction
     digitalWrite(left_wheel_rev_pin, LOW); // Set the motor direction
     digitalWrite(right_wheel_fwd_pin, HIGH); // Set the motor direction
-    digitalWrite(right_wheel_rev_pin, LOW); // Set the motor direction
-    
+    digitalWrite(right_wheel_rev_pin, LOW); // Set the motor direction 
   }
   else{
     motorSpeed = 0; 
@@ -71,15 +70,39 @@ void loop() {
   // Calculate left and right pwm 
   if(lft_rgt_pwmValue < 1480){
     turn_ratio = map(lft_rgt_pwmValue, 980, 1480, 0, 100);
-    analogWrite(left_wheel_pwm_out, motorSpeed*turn_ratio / 100); // Set the motor speed
-    // Serial.print("turn_ratio: ");
-    // Serial.println(turn_ratio);
-    analogWrite(right_wheel_pwm_out, motorSpeed); // Set the motor speed
-  } else if(lft_rgt_pwmValue > 1500){
+    if (motorSpeed > 5){
+      analogWrite(left_wheel_pwm_out, motorSpeed*turn_ratio / 100); // Set the motor speed
+      // Serial.print("turn_ratio: ");
+      // Serial.println(turn_ratio);
+      analogWrite(right_wheel_pwm_out, motorSpeed); // Set the motor speed
+    }
+
+    else{
+      digitalWrite(left_wheel_fwd_pin, LOW); // Set the motor direction
+      digitalWrite(left_wheel_rev_pin, HIGH); // Set the motor direction
+      digitalWrite(right_wheel_fwd_pin, HIGH); // Set the motor direction
+      digitalWrite(right_wheel_rev_pin, LOW); // Set the motor direction 
+      analogWrite(left_wheel_pwm_out, turn_ratio * 255); // Set the motor speed
+      analogWrite(right_wheel_pwm_out, turn_ratio * 255); // Set the motor speed
+    }
+  } 
+  
+  else if(lft_rgt_pwmValue > 1500){
     turn_ratio = map(lft_rgt_pwmValue, 1500, 1995, 100, 0);
-    analogWrite(left_wheel_pwm_out, motorSpeed); // Set the motor speed
-    analogWrite(right_wheel_pwm_out, motorSpeed*turn_ratio / 100); // Set the motor speed
+    if (motorSpeed > 5){
+      analogWrite(left_wheel_pwm_out, motorSpeed); // Set the motor speed
+      analogWrite(right_wheel_pwm_out, motorSpeed*turn_ratio / 100); // Set the motor speed
+    }
+    else{
+      digitalWrite(left_wheel_fwd_pin, HIGH); // Set the motor direction
+      digitalWrite(left_wheel_rev_pin, LOW); // Set the motor direction
+      digitalWrite(right_wheel_fwd_pin, LOW); // Set the motor direction
+      digitalWrite(right_wheel_rev_pin, HIGH); // Set the motor direction 
+      analogWrite(left_wheel_pwm_out, turn_ratio * 255); // Set the motor speed
+      analogWrite(right_wheel_pwm_out, turn_ratio * 255); // Set the motor speed
+    }
   }
+
   else{
     analogWrite(left_wheel_pwm_out, motorSpeed); // Set the motor speed
     analogWrite(right_wheel_pwm_out, motorSpeed); // Set the motor speed
